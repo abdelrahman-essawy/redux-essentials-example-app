@@ -9,6 +9,7 @@ import {
 import { Navbar } from './app/Navbar'
 import { PostsList } from './features/posts/PostsList'
 import { AddPostForm } from './features/posts/AddPostForm';
+import SinglePostPage from './features/posts/SinglePostPage';
 
 function App() {
   return (
@@ -16,16 +17,17 @@ function App() {
       <Navbar />
       <div className="App">
         <Switch>
-        <Route
+          <Route
             exact
             path="/"
             render={() => (
               <React.Fragment>
-              <AddPostForm />
+                <AddPostForm />
                 <PostsList />
               </React.Fragment>
             )}
           />
+          <Route  path="/posts/:postId" component={props =><SinglePostPage {...props}/>} />
           <Redirect to="/" />
         </Switch>
       </div>

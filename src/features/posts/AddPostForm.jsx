@@ -24,7 +24,6 @@ export const AddPostForm = () => {
         setContent('')
     }
 
-    console.log()
     return (
         <section>
             <h2>Add a New Post</h2>
